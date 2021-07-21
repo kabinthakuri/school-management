@@ -31,3 +31,10 @@ Route::prefix('users')->group(function(){
     Route::post('/update/{id}', 'App\Http\Controllers\Backend\UserController@UserUpdate')->name('user.update');
     Route::get('/delete/{id}','App\Http\Controllers\Backend\UserController@UserDelete')->name('user.delete');
 });
+Route::prefix('profile')->group(function(){
+    Route::get('/view', 'App\Http\Controllers\Backend\ProfileController@ProfileView')->name('profile.view');
+    Route::get('/edit', 'App\Http\Controllers\Backend\ProfileController@ProfileEdit')->name('profile.edit');
+    Route::post('/store','App\Http\Controllers\Backend\ProfileController@ProfileStore')->name('profile.store');
+    Route::get('/password/view', 'App\Http\Controllers\Backend\ProfileController@PasswordView')->name('password.view');
+    Route::post('/password/update', 'App\Http\Controllers\Backend\ProfileController@PasswordUpdate')->name('password.update');
+});
