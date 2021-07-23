@@ -99,7 +99,7 @@ $(function(){
     var link = $(this).attr("href");
 
           Swal.fire({
-        title: 'Are you sure you want to delete this user?',
+        title: 'Are you sure you want to delete this data?',
         text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
