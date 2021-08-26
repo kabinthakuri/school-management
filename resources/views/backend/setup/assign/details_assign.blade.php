@@ -8,35 +8,33 @@
 
 		   <div class="box">
 			  <div class="box-header with-border">
-				<h3 class="box-title">User List</h3>
-                <a href="{{route('user.add')}}" class="btn btn-rounded btn-success mb-5 float-right">Add User</a>
+				<h3 class="box-title">Asigned Subjects Details</h3>
+                <a href="{{route('assign.subject.add')}}" class="btn btn-rounded btn-success mb-5 float-right">Add Fee Amount</a>
 			  </div>
 			  <!-- /.box-header -->
 			  <div class="box-body">
 				  <div class="table-responsive">
+                      <h4><strong>Class: </strong>{{$detailsData[0]->student_class->name}}</h4>
 					<table id="example1" class="table table-bordered table-striped">
-					  <thead>
+					  <thead class="thead-light">
 						  <tr>
 							  <th width="5%">SN</th>
-							  <th>Role</th>
-							  <th>Name</th>
-							  <th>Email</th>
-							  <th>Code</th>
-							  <th width="25%">Action</th>
+							  <th>Subjects</th>
+							  <th width="10%">Full Mark</th>
+                              <th width="10%">Pass Mark</th>
+                              <th width="10%">Subjective Mark</th>
 						  </tr>
 					  </thead>
 					  <tbody>
-						  @foreach($allData as $key=>$user)
+						  @foreach($detailsData as $key=>$details)
 						  <tr>
 							  <td>{{$key+1}}</td>
-							  <td>{{$user->role}}</td>
-							  <td>{{$user->name}}</td>
-							  <td>{{$user->email}}</td>
-							  <td>{{$user->code}}</td>
-							  <td>
-								<a href="{{route('user.edit',$user->id)}}" class="btn btn-info mr-5 ">Edit</a>
-								<a href="{{route('user.delete',$user->id)}}" class="btn btn-danger " id="delete">Delete</a>	  
-							  </td>
+							  
+							  <td>{{$details->subject->name}}</td>
+							 
+							  <td>{{$details->full_mark}}</td>
+							  <td>{{$details->pass_mark}}</td>
+							  <td>{{$details->subjective_mark}}</td>
 							  
 						  </tr>
 						  @endforeach

@@ -24,8 +24,8 @@
                             <div class="controls">
                                 <select name="usertype" id="usertype" class="form-control">
                                     <option value="">Select Role</option>
-                                    <option value="admin" @if($useredit->usertype == "admin")selected @endif>Admin</option>
-                                    <option value="user" @if($useredit->usertype == "user")selected @endif>User</option>
+                                    <option value="admin" @if($useredit->role == "admin")selected @endif>Admin</option>
+                                    <option value="operator" @if($useredit->role == "operator")selected @endif>Operator</option>
                                     
                                 </select>
                             </div>
